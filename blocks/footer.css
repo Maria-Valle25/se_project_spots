@@ -1,0 +1,22 @@
+.footer {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #212121;
+  line-height: 100%;
+  letter-spacing: 0;
+  opacity: 70%;
+  width: 105px;
+  height: 16px;
+  top: 1340px;
+  left: 668px;
+}
