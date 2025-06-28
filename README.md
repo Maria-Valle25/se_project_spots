@@ -27,3 +27,7 @@ The project is developed using responsive web design principles, incorporating f
 This webpage is deployed to GitHub Pages
 
 - [Deployment link](https://maria-valle25.github.io/se_project_spots/)
+
+## Project Demo Video
+
+- [Watch the demo video on Google Drive](https://drive.google.com/file/d/1aK8Dw5p4zZthaftf8hwW_6Ol7DJ4CF-X/view?usp=sharing)
