@@ -40,7 +40,11 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <button class="card__delete-button" type="button"></button>
+                <button
+                  aria-label="Delete card"
+                  class="card__delete-button"
+                  type="button"
+                ></button>
                 <img class="card__image" src="#" alt="" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
@@ -60,7 +64,11 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button
+            aria-label="Close modal"
+            type="button"
+            class="modal__close-btn"
+          ></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -88,7 +96,11 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
+          <button
+            aria-label="Close modal"
+            type="button"
+            class="modal__close-btn"
+          ></button>
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
@@ -98,6 +110,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Place a link to the picture"
+                required
               />
             </label>
             <label for="type-caption-input" class="modal__label">
@@ -107,13 +120,14 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
-      <div class="modal modal__type_preview" id="preview-modal">
+      <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
           <button
             aria-label="Close Modal"

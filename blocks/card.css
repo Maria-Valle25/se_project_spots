@@ -10,6 +10,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card__content {
@@ -82,7 +83,7 @@
   opacity: 0.4;
 }
 
-@media screen and (max-width: 667px) {
+@media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
     width: 288px;

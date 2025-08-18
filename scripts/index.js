@@ -142,25 +142,26 @@ function handleEditProfileSubmit(evt) {
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
-//function handleAddCardSubmit(evt) {
-// evt.preventDefault();
-// console.log(newPostImageLinkInput.value);
-// console.log(newPostCaptionInput.value);
-//closeModal(handleAddCardSubmit);
-//addCardFormElement.reset();
-//}
-
 addCardFormElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  const name = newPostCaptionInput.value;
+  const link = newPostImageLinkInput.value;
+  if (name === "" || link === "") {
+    alert("Please fill in both fields before saving.");
+    return;
+  }
+
   const inputValues = {
-    name: newPostCaptionInput.value,
-    link: newPostImageLinkInput.value,
+    name: name,
+    link: link,
   };
+
   const cardElement = getCardElement(inputValues);
 
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
+  addCardFormElement.reset();
 });
 
 initialCards.forEach(function (item) {
