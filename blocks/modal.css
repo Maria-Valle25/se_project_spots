@@ -16,6 +16,10 @@
   transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
+.modal__type_preview {
+  padding: 0 16px;
+}
+
 .modal_is-opened {
   opacity: 1;
   visibility: visible;
@@ -41,7 +45,19 @@
   opacity: 40%;
 }
 
+.modal__close-btn_type_preview {
+  top: 0;
+  right: -52.5px;
+  background-image: url(../images/cancel-icon.svg);
+  color: #fff;
+}
+
 .modal__close-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.modal__close-btn_type_preview:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -117,6 +133,32 @@
   cursor: pointer;
 }
 
+.modal__image-container {
+  position: absolute;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0%;
+  line-height: 120%;
+  color: white;
+  background-color: #212121;
+  padding: 4px 8px;
+  position: absolute;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 667px) {
   .modal__container {
     padding: 12px;
@@ -140,6 +182,11 @@
     top: 12px;
     right: 12px;
     bottom: 24px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
   }
 
   .modal__form {
