@@ -35,4 +35,4 @@ insert_final_newline = true
 
 # Dot settings
 project_name = se_project_library
-required_files = index.html,styles/style.css
+required_files = index.html,pages/index.css,blocks/*.css

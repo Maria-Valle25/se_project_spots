@@ -106,7 +106,7 @@ function handleEscClose(evt) {
   }
 }
 
-function modalOverlay(evt) {
+function handleOverlayClick(evt) {
   if (evt.target.classList.contains("modal")) {
     closeModal(evt.target);
   }
@@ -115,13 +115,13 @@ function modalOverlay(evt) {
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscClose);
-  modal.addEventListener("mousedown", modalOverlay);
+  modal.addEventListener("mousedown", handleOverlayClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   document.removeEventListener("keydown", handleEscClose);
-  modal.removeEventListener("mousedown", modalOverlay);
+  modal.removeEventListener("mousedown", handleOverlayClick);
 }
 
 editProfileBtn.addEventListener("click", function () {
@@ -172,8 +172,11 @@ addCardFormElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const name = newPostCaptionInput.value;
   const link = newPostImageLinkInput.value;
-  if (name === "" || link === "") {
-    alert("Please fill in both fields before saving.");
+  if (
+    !newPostCaptionInput.validity.valid ||
+    !newPostImageLinkInput.validity.valid
+  ) {
+    alert("Please fix the errors before submitting.");
     return;
   }
 
@@ -188,7 +191,7 @@ addCardFormElement.addEventListener("submit", function (evt) {
 
   closeModal(newPostModal);
   addCardFormElement.reset();
-  disabledButton(addCardSubmitButton, settings);
+  disableButton(addCardSubmitButton, settings);
 });
 
 initialCards.forEach(function (item) {

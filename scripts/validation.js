@@ -11,6 +11,7 @@ const showInputError = (formEl, inputEl, errorMessage, config) => {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = errorMessage;
   inputEl.classList.add(config.inputErrorClass);
+  errorMessageEl.classList.add(config.errorClass);
 };
 
 const hideInputError = (formEl, inputEl, config) => {
@@ -35,14 +36,14 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    disabledButton(buttonEl, config);
+    disableButton(buttonEl, config);
   } else {
     buttonEl.disabled = false;
     buttonEl.classList.remove(config.inactiveButtonClass);
   }
 };
 
-const disabledButton = (buttonEl, config) => {
+const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
   buttonEl.classList.add(config.inactiveButtonClass);
 };
@@ -51,6 +52,11 @@ const resetValidation = (formEl, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(formEl, input, config);
   });
+  toggleButtonState(
+    inputList,
+    formEl.querySelector(config.submitButtonSelector),
+    config
+  );
 };
 
 const setEventListeners = (formEl, config) => {
