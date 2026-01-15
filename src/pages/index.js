@@ -45,6 +45,9 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
 
+const editProfileSubmitBtn =
+  editProfileModal.querySelector(".modal__submit-btn");
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -177,8 +180,8 @@ editProfileBtn.addEventListener("click", function () {
     [editProfileNameInput, editProfileDescriptionInput],
     settings
   );
-
   openModal(editProfileModal);
+  disableButton(editProfileSubmitBtn, settings);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
@@ -236,6 +239,8 @@ function handleEditProfileSubmit(evt) {
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
       closeModal(editProfileModal);
+      //editProfileForm.reset();
+      disableButton(editProfileSubmitBtn, settings);
     })
     .catch(console.error)
     .finally(() => {
@@ -259,8 +264,9 @@ function handleAvatarSubmit(evt) {
     .then((data) => {
       profileAvatar.src = data.avatar;
       profileAvatar.alt = data.name || profileNameEl.textContent;
-      avatarFormElement.reset();
       closeModal(avatarModal);
+      avatarFormElement.reset();
+      disableButton(avatarSubmitButton, settings);
     })
     .catch(console.error)
     .finally(() => {
