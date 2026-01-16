@@ -28,6 +28,7 @@ This webpage is deployed to GitHub Pages
 
 - [Deployment link](https://maria-valle25.github.io/se_project_spots/)
 
-## Project Demo Video
+## Project Pitch Video
 
-- [Watch the demo video on Google Drive](https://drive.google.com/file/d/1aK8Dw5p4zZthaftf8hwW_6Ol7DJ4CF-X/view?usp=sharing)
+Check out [Maria Valle -Project Pitch -Spots Project ](https://drive.google.com/file/d/1aWaL4VIo9hYYjPmtwUyXFobwViJD4-wY/view?usp=drive_link), where I describe my
+project and some challenges I faced while building it.
